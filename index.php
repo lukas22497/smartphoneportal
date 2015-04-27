@@ -69,19 +69,19 @@
 					break;
 				case "1":
 					echo "<h2>Smartphones anzeigen (normal)</h2>";
-					include ("php/smartphoneanzeigen1.inc.php");
+					include ("inc/smartphoneanzeigen1.inc.php");
 					break;
 				case "2":
 					echo "<h2>Smartphones anzeigen (jQuery-Tablesorter)</h2>";
-					include ("php/smartphoneanzeigen2.inc.php");
+					include ("inc/smartphoneanzeigen2.inc.php");
 					break;
 				case "3":
 					echo "<h2>Smartphones anzeigen (animiertes Tablesort)</h2>";
-					include ("php/smartphoneanzeigen3.inc.php");
+					include ("inc/smartphoneanzeigen3.inc.php");
 					break;
 				case "4":
 					echo "<h2>Smartphones hinzufügen</h2>";
-					include ("php/smartphoneanzeigen.inc.php");
+					include ("inc/smartphoneanzeigen.inc.php");
 					break;
 				} // Ende Switch-Case-Anweisung	
 				
@@ -90,7 +90,7 @@
 				$suche = isset($_POST['suchstring']) ? $_POST['suchstring'] : '';
 				if ($sent and $suche) {
 					echo "<h2>Kneipen suchen</h2>";
-					include("php/suchen.inc.php");
+					include("inc/suchen.inc.php");
 				}
 			?>			
 		</article>
