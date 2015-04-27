@@ -65,23 +65,23 @@
 			//echo $navigation;
 			switch ($navigation) {
 				case "0":
-					echo "<h2>Willkommen beim Kneipentest!</h2>";
+					echo "<h2>Willkommen im Smartphoneportal!</h2>";
 					break;
 				case "1":
-					echo "<h2>Kneipen anzeigen (normal)</h2>";
-					include ("php/kneipenanzeigen1.inc.php");
+					echo "<h2>Smartphones anzeigen (normal)</h2>";
+					include ("php/smartphoneanzeigen1.inc.php");
 					break;
 				case "2":
-					echo "<h2>Kneipen anzeigen (jQuery-Tablesorter)</h2>";
-					include ("php/kneipenanzeigen2.inc.php");
+					echo "<h2>Smartphones anzeigen (jQuery-Tablesorter)</h2>";
+					include ("php/smartphoneanzeigen2.inc.php");
 					break;
 				case "3":
-					echo "<h2>Kneipen anzeigen (animiertes Tablesort)</h2>";
-					include ("php/kneipenanzeigen3.inc.php");
+					echo "<h2>Smartphones anzeigen (animiertes Tablesort)</h2>";
+					include ("php/smartphoneanzeigen3.inc.php");
 					break;
 				case "4":
-					echo "<h2>Kneipen hinzufügen</h2>";
-					include ("php/kneipenhinzufuegen.inc.php");
+					echo "<h2>Smartphones hinzufügen</h2>";
+					include ("php/smartphoneanzeigen.inc.php");
 					break;
 				} // Ende Switch-Case-Anweisung	
 				
