@@ -21,7 +21,6 @@
             wlan as w
             on sp.ID = w.ID            
             WHERE s.name LIKE \'%'.$_GET['smartphone'].'%\'';
-            // Hier die richtige Variable verwenden. Vielleicht die Smartphone-ID benutzen oder den ausgewählten Namen.
             // in die Abfrage müssen noch die anderen Spezifikationen eingebaut werden.
 	$erg = $db->query($sql) or die ("Fehlermeldung=".$db->error()); // $erg ist ein Mysql-Link, der auf ein Ergebnis in der MySQL-Datenbank zeigt.
     echo "<table>";
