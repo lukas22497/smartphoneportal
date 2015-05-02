@@ -21,7 +21,7 @@
 		</h2>
 		<ul>
 			<li><a href="index.php?navi=1" title="Normale Darstellung">Kneipen anzeigen</a></li>
-			<li><a href="index.php?navi=2" title="jQuery-Darstellung">Kneipen anzeigen</a></li> //kopieren!
+			<li><a href="index.php?navi=2" title="jQuery-Darstellung">Kneipen anzeigen</a></li>
 			<li><a href="index.php?navi=3" title="animierte jQuery-Darstellung">Kneipen anzeigen</a></li>
 			<li><a href="index.php?navi=4">Kneipen hinzufügen</a></li>
 		</ul>
@@ -83,6 +83,11 @@
 					echo "<h2>Smartphones hinzufügen</h2>";
 					include ("inc/smartphoneanzeigen.inc.php");
 					break;
+                //Detailansicht
+                case "10":
+                    echo "<h2>Detailansicht</h2>";
+                    include ("inc/smartphone_details.inc.php");
+                    break;
 				} // Ende Switch-Case-Anweisung	
 				
 				// Überprüfung auf Ausführung des Suchformulars

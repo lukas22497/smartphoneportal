@@ -25,7 +25,7 @@
 		$a=$row["name"];
 		$b=$row["category"];
         $c=$row["os"];
-		echo "<tr><td><a href='http://localhost/smartphoneportal/inc/smartphone_details.inc.php'>$a</a></td><td>$b</td><td>$c</td></tr>";
+		echo "<tr><td><a href='/smartphoneportal/index.php?navi=10&smartphone=$a' title='Detailansicht Smartphone'>$a</a></td><td>$b</td><td>$c</td></tr>";
         // Adresse eintragen. Hier muss noch eine GET/POST-Abfrage eingebaut werden, um eine Variable zu erzeugen für die SQL-Abfrage.
 	}
 	echo "</tbody>";
