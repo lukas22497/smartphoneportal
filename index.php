@@ -6,13 +6,13 @@
 <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <!-- 	html5 + CSS 3 Template created by miss monorom  http://intensivstation.ch 2011 -->
 
-<title>Willkommen beim Kneipentest</title>
+<title>Smartphoneportal</title>
 </head>
 <body>
 <div id="container">
 	<header>
 		<h2>
-			Header: Willkommen beim Kneipentest
+			Smartphoneportal
 		</h2>
 	</header>
 	<nav>
@@ -89,7 +89,7 @@
 				$sent = isset($_POST['sent']) ? $_POST['sent'] : '';
 				$suche = isset($_POST['suchstring']) ? $_POST['suchstring'] : '';
 				if ($sent and $suche) {
-					echo "<h2>Kneipen suchen</h2>";
+					echo "<h2>Smartphone suchen</h2>";
 					include("inc/suchen.inc.php");
 				}
 			?>			
