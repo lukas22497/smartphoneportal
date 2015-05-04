@@ -10,10 +10,10 @@
             smartphone as s
             JOIN
             category as c
-            on s.ID = c.ID
+            on s.category_ID = c.ID
             JOIN
             os as o
-            on s.ID = o.ID';
+            on s.os_ID = o.ID';
 	$erg = mysqli_query($db,$sql) or die ("Fehlermeldung: " . mysqli_error($db));
     echo "<table>";
 	echo "<thead>";
