@@ -95,7 +95,7 @@
 
       if ($sent and $suche) {
        echo "<h2>Smartphone suchen</h2>";
-       include("suchen.inc.php");
+       include("inc/suchen.inc.php");
       }
 
      ?>

@@ -4,7 +4,23 @@
 	include("db_connect.inc.php");
 
 	//SQl-Statement
-	$sql = 'SELECT s.id, s.name, c.category, o.os, w.wlan FROM smartphone AS s, category AS c, os AS o, specs AS sp, wlan AS w WHERE s.ID = c.ID, s.ID = o.ID, s.ID = sp.ID, sp.ID = w.ID, s.name LIKE \'%'.$_GET['smartphone'].'%\'';
+	$sql = 'SELECT 
+			s.id, s.name, c.category, o.os, w.wlan
+            FROM
+            smartphone as s
+            JOIN
+            category as c
+            on s.ID = c.ID
+            JOIN
+            os as o
+            on s.ID = o.ID
+            JOIN
+            specs as sp
+            on s.ID = sp.ID
+            JOIN
+            wlan as w
+            on sp.ID = w.ID            
+            WHERE s.name LIKE \'%'.$_GET['smartphone'].'%\'';
 
   $erg = mysqli_query($db,$sql) or die ("Fehlermeldung: " . mysqli_error($db));
 
