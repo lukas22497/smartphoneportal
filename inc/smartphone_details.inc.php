@@ -10,16 +10,16 @@
             smartphone as s
             JOIN
             category as c
-            on s.ID = c.ID
+            on s.category_ID = c.ID
             JOIN
             os as o
-            on s.ID = o.ID
+            on s.os_ID = o.ID
             JOIN
             specs as sp
-            on s.ID = sp.ID
+            on s.specs_ID = sp.ID
             JOIN
             wlan as w
-            on sp.ID = w.ID            
+            on sp.wlan_ID = w.ID            
             WHERE s.name LIKE \'%'.$_GET['smartphone'].'%\'';
 
   $erg = mysqli_query($db,$sql) or die ("Fehlermeldung: " . mysqli_error($db));
