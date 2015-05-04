@@ -8,10 +8,10 @@
             smartphone as s
             JOIN
             category as c
-            on s.ID = c.ID
+            on s.category_ID = c.ID
             JOIN
             os as o
-            on s.ID = o.ID
+            on s.os_ID = o.ID
 	       WHERE s.name LIKE \'%' . $_POST['suchstring'].'%\'
 	       OR c.category LIKE \'%' . $_POST['suchstring'].'%\'
 	       OR o.os LIKE \'%'.$_POST['suchstring'].'%\'';
@@ -24,15 +24,11 @@
  echo "</thead>";
  echo "<tbody>";
 
- while($row = mysqli_fetch_array($erg)) {
-  echo
-   "<tr><td>"
-   .$row['name'] .
-   "</td><td>"
-   .$row['category'] .
-   "</td><td>"
-   .$row['os']
-   ."</td></tr>";
+ while (($row = $erg->fetch_assoc()) !== NULL) {
+		$a=$row["name"];
+		$b=$row["category"];
+        $c=$row["os"];
+		echo "<tr><td><a href='/smartphoneportal/index.php?navi=10&smartphone=$a' title='Detailansicht Smartphone'>$a</a></td><td>$b</td><td>$c</td></tr>";
  }
 
  echo "</tbody>";

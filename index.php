@@ -38,22 +38,6 @@
       <input type="reset">
       <input type="hidden" name="sent" value="1">
      </form>
-    <?php
-     echo "<form method=\"post\" action=\"index.php\">
-      <table>
-       <tr>
-        <td>
-         <input id=\"tags\" type=text name=suchstring size=24 class=\"ui-widget\">
-        </td>
-       </tr>
-       <tr>
-        <td>
-         <input type=\"submit\" value=\"Absenden\">
-         <input type=\"hidden\" name\"sent\" value=\"1\">
-        </td>
-       </tr>
-      </table>"
-    ?>
   </aside>
 
   <section id="content">

@@ -40,7 +40,7 @@
   $erg = mysqli_query($db,$sql) or die ("Fehlermeldung: " . mysqli_error($db));
 
 
-	    while (($row = $erg->fetch_assoc()) !== NULL) {
+        $row = $erg->fetch_assoc();
        // echo var_dump($row);
 		    $a=$row["name"];
 		    $b=$row["category"];
@@ -48,15 +48,19 @@
             $d=$row["wlan"];
             $p1=$row["front"];
             $p2=$row["back"];
+
         echo "<h2>Detailansicht - $a</h2>";
-        echo "<table>";
-        echo "<thead>";
-        echo "<tr><td><img src='img/smartphones/$p1' alt='Vorderseite.$a' /></td><td><img src='img/smartphones/$p2' alt='Rückseite.$a' /></td></tr>";
-        echo "<tr><th>Name</th><th>Kategorie</th><th>Betriebssystem</th><th>WLAN</th></tr>";
-        echo "</thead>";
-        echo "<tbody>";
-        echo "<tr><td>$a</td><td>$b</td><td>$c</td><td>$d</td></tr>";
-	    }
-	  echo "</tbody>";
-	echo "</table>";
+        echo "<img style='max-width: 20%; height:auto;' src='img/smartphones/$p1' alt='Vorderseite.$a' /></td><td><img style='max-width: 20%; height:auto;' src='img/smartphones/$p2' alt='Rückseite.$a' />";
+        echo "<h3>Name</h3>";
+        echo $a."<br>";
+        echo "<br />";
+        echo "<h3>Kategorie</h3>";
+        echo $b."<br>";
+        echo "<br />";
+        echo "<h3>Betriebssystem</h3>";
+        echo $c."<br>";
+        echo "<br />";
+        echo "<h3>WLAN</h3>";
+        echo $d."<br>";
+        echo "<br />";
 ?>
