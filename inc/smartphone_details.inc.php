@@ -4,7 +4,7 @@
 	include("db_connect.inc.php");
 
 	//SQl-Statement
-	$sql = 'SELECT 
+	$sql = 'SELECT
 			s.id, s.name, c.category, o.os, w.wlan
             FROM
             smartphone as s
@@ -19,8 +19,20 @@
             on s.specs_ID = sp.ID
             JOIN
             wlan as w
-            on sp.wlan_ID = w.ID            
+            on sp.wlan_ID = w.ID
             WHERE s.name LIKE \'%'.$_GET['smartphone'].'%\'';
+
+  /* Alternatives Statement (ohne JOINs)
+    $sql = '
+      SELECT s.id, s.name, c.category, o.os, w.wlan
+      FROM smartphone AS s, category AS c, os AS o, specs AS sp, wlan AS w
+      WHERE s.ID = c.ID
+      AND s.ID = o.ID
+      AND s.ID = sp.ID
+      AND sp.ID = w.ID
+      AND s.name LIKE \'%'.$_GET['smartphone'].'%\'
+    ';
+  */
 
   $erg = mysqli_query($db,$sql) or die ("Fehlermeldung: " . mysqli_error($db));
 
