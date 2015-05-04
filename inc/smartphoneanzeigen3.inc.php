@@ -1,16 +1,16 @@
 <?php
-	echo "Inhalt der Datei: kneipenanzeigen3.inc.php";
+
 	//Database-Values
-	include("db_connect.php");
-	
+	include("db_connect.inc.php");
+
 	//SQl-Statement
-	$sql = 'SELECT 
+	$sql = 'SELECT
 			k.name, k.plz, k.stadt, k.strasse,
-			uk.art, uk.note, uk.kommentar 
+			uk.art, uk.note, uk.kommentar
 			FROM kneipen as k
 			INNER JOIN user_has_kneipe as uk
 			ON k.ID = uk.kneipe_ID';
-	$erg = mysql_query ($sql,$db) or die ("Fehlermeldung=".mysql_error());
+  $erg = mysqli_query($db,$sql) or die ("Fehlermeldung: " . mysqli_error());
 	// Speichert die Anzahl der Tabellenzeilen für die Schleife
 	$anz = mysql_num_rows($erg);
 	echo "<table>";

@@ -1,10 +1,10 @@
 <?php
-	echo "Inhalt der Datei: smartphonesanzeigen1.inc.php";
-	//Database-Values 
-	include("db_connecti.php");
-	
+
+	//Database-Values
+	include("db_connect.inc.php");
+
 	//SQl-Statement
-	$sql = 'SELECT 
+	$sql = 'SELECT
 			s.id, s.name, c.category, o.os
             FROM
             smartphone as s
@@ -14,7 +14,7 @@
             JOIN
             os as o
             on s.ID = o.ID';
-	$erg = $db->query($sql) or die ("Fehlermeldung=".$db->error()); // $erg ist ein Mysql-Link, der auf ein Ergebnis in der MySQL-Datenbank zeigt.
+	$erg = mysqli_query($db,$sql) or die ("Fehlermeldung: " . mysqli_error($db));
     echo "<table>";
 	echo "<thead>";
 	echo "<tr><th>Name</th><th>Kategorie</th><th>Betriebssystem</th></tr>";

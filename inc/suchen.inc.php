@@ -9,7 +9,7 @@
 	 OR Kommentar LIKE \'%' . $_POST['suchstring'] . '%\'
 	 ';
 
- $erg = mysqli_query($db,$sql) or die ("Fehlermeldung: " . mysqli_error());
+ $erg = mysqli_query($db,$sql) or die ("Fehlermeldung: " . mysqli_error($db));
 
  echo "<table>";
  echo "<thead>";
@@ -18,9 +18,9 @@
  echo "<tbody>";
 
  while($row = mysqli_fetch_array($erg)) {
-  echo 
+  echo
    "<tr><td>"
-   . $row['Name'] . 
+   . $row['Name'] .
    "</td><td>"
    . $row['Art'] .
    "</td><td>"

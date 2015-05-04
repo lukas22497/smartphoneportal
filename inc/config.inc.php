@@ -1,5 +1,4 @@
-<?php    
-    //Database-Values
+<?php
     $url="localhost";
     $user="mueller_olej";
     $pass="smartphoneportal";

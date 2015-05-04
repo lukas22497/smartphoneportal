@@ -81,7 +81,7 @@
 					break;
 				case "4":
 					echo "<h2>Smartphones hinzufügen</h2>";
-					include ("inc/smartphoneanzeigen.inc.php");
+					include ("inc/smartphonehinzufuegen.inc.php");
 					break;
                 //Detailansicht
                 case "10":
