@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 02. Mai 2015 um 21:56
+-- Erstellungszeit: 04. Mai 2015 um 14:51
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -118,6 +118,25 @@ INSERT INTO `os` (`ID`, `os`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `picture`
+--
+
+CREATE TABLE IF NOT EXISTS `picture` (
+  `ID` int(11) NOT NULL,
+  `front` varchar(45) DEFAULT NULL,
+  `back` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `picture`
+--
+
+INSERT INTO `picture` (`ID`, `front`, `back`) VALUES
+(1, 's6_front.png', 's6_back.png');
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `size`
 --
 
@@ -146,16 +165,18 @@ CREATE TABLE IF NOT EXISTS `smartphone` (
   `preis` decimal(6,2) DEFAULT NULL,
   `category_ID` smallint(6) NOT NULL,
   `os_ID` tinyint(4) NOT NULL,
-  `specs_ID` smallint(6) NOT NULL
+  `specs_ID` smallint(6) NOT NULL,
+  `picture_ID` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `smartphone`
 --
 
-INSERT INTO `smartphone` (`ID`, `name`, `preis`, `category_ID`, `os_ID`, `specs_ID`) VALUES
-(1, 'Samsung Galaxy S6', '799.00', 1, 1, 1),
-(2, 'Nexus 5', '600.00', 2, 2, 2);
+INSERT INTO `smartphone` (`ID`, `name`, `preis`, `category_ID`, `os_ID`, `specs_ID`, `picture_ID`) VALUES
+(1, 'Samsung Galaxy S6', '799.00', 1, 1, 1, 1),
+(2, 'Nexus 6', '699.00', 1, 1, 2, 1),
+(3, 'iPhone 5c', '499.00', 2, 2, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -283,6 +304,12 @@ ALTER TABLE `os`
  ADD PRIMARY KEY (`ID`);
 
 --
+-- Indizes für die Tabelle `picture`
+--
+ALTER TABLE `picture`
+ ADD PRIMARY KEY (`ID`);
+
+--
 -- Indizes für die Tabelle `size`
 --
 ALTER TABLE `size`
@@ -292,7 +319,7 @@ ALTER TABLE `size`
 -- Indizes für die Tabelle `smartphone`
 --
 ALTER TABLE `smartphone`
- ADD PRIMARY KEY (`ID`,`category_ID`,`os_ID`,`specs_ID`), ADD KEY `fk_smartphone_category1_idx` (`category_ID`), ADD KEY `fk_smartphone_os1_idx` (`os_ID`), ADD KEY `fk_smartphone_specs1_idx` (`specs_ID`);
+ ADD PRIMARY KEY (`ID`,`category_ID`,`os_ID`,`specs_ID`,`picture_ID`), ADD KEY `fk_smartphone_category1_idx` (`category_ID`), ADD KEY `fk_smartphone_os1_idx` (`os_ID`), ADD KEY `fk_smartphone_specs1_idx` (`specs_ID`), ADD KEY `fk_smartphone_picture1_idx` (`picture_ID`);
 
 --
 -- Indizes für die Tabelle `specs`
@@ -368,6 +395,7 @@ MODIFY `ID` tinyint(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 ALTER TABLE `smartphone`
 ADD CONSTRAINT `fk_smartphone_category1` FOREIGN KEY (`category_ID`) REFERENCES `category` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
 ADD CONSTRAINT `fk_smartphone_os1` FOREIGN KEY (`os_ID`) REFERENCES `os` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+ADD CONSTRAINT `fk_smartphone_picture1` FOREIGN KEY (`picture_ID`) REFERENCES `picture` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
 ADD CONSTRAINT `fk_smartphone_specs1` FOREIGN KEY (`specs_ID`) REFERENCES `specs` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
