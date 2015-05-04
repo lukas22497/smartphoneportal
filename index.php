@@ -5,7 +5,7 @@
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link type="text/css" href="css/style.css" rel="stylesheet" media="screen" />
- 
+
   <title>Smartphone-Portal</title>
  </head>
 
@@ -62,28 +62,33 @@
 
      <?php
       $navigation = isset($_GET['navi']) ? $_GET['navi'] : '0';
-      
-      switch ($navigation) {
-       case "0":
-        echo "<h2>Willkommen im Smartphone-Portal...</h2>";
-        break;
-       case "1":
-        echo "<h2>Smartphones anzeigen (normal)</h2>";
-        include("inc/smartphoneanzeigen1.inc.php");
-        break;
-       case "2":
-        echo "<h2>Smartphones anzeigen (Tablesorter)</h2>";
-        include("inc/smartphoneanzeigen2.inc.php");
-        break;
-       case "3":
-        echo "<h2>Smartphones anzeigen (Animiert: table-sort)</h2>";
-        include("inc/smartphoneanzeigen3.inc.php");
-        break;
-       case "4":
-        echo "<h2>Smartphones hinzuf&uuml;gen</h2>";
-        include("inc/smartphonehinzufuegen.inc.php");
-        break;
-      }
+
+			switch ($navigation) {
+				case "0":
+					echo "<h2>Willkommen im Smartphoneportal!</h2>";
+					break;
+				case "1":
+					echo "<h2>Smartphones anzeigen (normal)</h2>";
+					include ("inc/smartphoneanzeigen1.inc.php");
+					break;
+				case "2":
+					echo "<h2>Smartphones anzeigen (jQuery-Tablesorter)</h2>";
+					include ("inc/smartphoneanzeigen2.inc.php");
+					break;
+				case "3":
+					echo "<h2>Smartphones anzeigen (animiertes Tablesort)</h2>";
+					include ("inc/smartphoneanzeigen3.inc.php");
+					break;
+				case "4":
+					echo "<h2>Smartphones hinzufügen</h2>";
+					include ("inc/smartphoneanzeigen.inc.php");
+					break;
+                //Detailansicht
+                case "10":
+                    echo "<h2>Detailansicht</h2>";
+                    include ("inc/smartphone_details.inc.php");
+                    break;
+				}
 
       $sent = isset($_POST['sent']) ? $_POST['sent'] : '';
       $suche = isset($_POST['suchstring']) ? $_POST['suchstring'] : '';
@@ -97,8 +102,8 @@
 
    </article>
   </section>
-  
-  <footer>	
+
+  <footer>
    <h2>Wer braucht schon Smartphones?</h2>
   </footer>
 
