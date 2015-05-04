@@ -85,7 +85,6 @@
 					break;
                 //Detailansicht
                 case "10":
-                    echo "<h2>Detailansicht</h2>";
                     include ("inc/smartphone_details.inc.php");
                     break;
 				}
