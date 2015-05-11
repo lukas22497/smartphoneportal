@@ -1,5 +1,4 @@
 <?php
-
 	//Database-Values
 	include("db_connect.inc.php");
 
@@ -51,18 +50,19 @@
             $d=$row["wlan"];
             $p=$row["frontback"];
 
+        
         echo "<h2>Detailansicht - $a</h2>";
-        echo "<img src='img/smartphones/$p' />";
+       // echo "<img src='img/$p' />";
         echo "<h3>Name</h3>";
         echo $a."<br>";
-        echo "<br />";
         echo "<h3>Kategorie</h3>";
         echo $b."<br>";
-        echo "<br />";
         echo "<h3>Betriebssystem</h3>";
         echo $c."<br>";
-        echo "<br />";
         echo "<h3>WLAN</h3>";
         echo $d."<br>";
-        echo "<br />";
+        echo "</div>";
+        echo "<div class='col-md-5'>";
+        echo "<img class='featurette-image img-responsive center-block' src='img/$p' data-src='holder.js/500x500/auto' alt='Generic placeholder image'>";
+        echo "</div>";
 ?>

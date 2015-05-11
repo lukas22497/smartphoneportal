@@ -156,24 +156,30 @@
       <hr class="featurette-divider">
 
       <div class="row featurette">
-        <div class="col-md-7">
      <?php
       $navigation = isset($_GET['navi']) ? $_GET['navi'] : '0';
 
 			switch ($navigation) {
 				case "0":
+                    echo "<div class='col-md-7'>";
 					echo "<h2>Willkommen im Smartphoneportal!</h2>";
+                    echo "</div>";
 					break;
 				case "1":
+                    echo "<div class='col-md-7'>";
 					echo "<h2 class='featurette-heading'>Smartphones <span class='text-muted'>anzeigen</span></h2>";
 					include ("inc/smartphoneanzeigen1.inc.php");
+                    echo "</div>";
 					break;
 				case "2":
+                    echo "<div class='col-md-7'>";
 					echo "<h2>Smartphone bewerten</h2>";
 					include ("inc/smartphonebewerten.inc.php");
+                    echo "</div>";
 					break;
                 		//Detailansicht
                 		case "10":
+                                echo "<div class='col-md-7'>";
                     			include ("inc/smartphone_details.inc.php");
                     			break;
 			}
@@ -188,7 +194,6 @@
 */
      ?>
 <!--          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>-->
-        </div>
 <!--
         <div class="col-md-5">
           <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
