@@ -5,15 +5,15 @@
 
 	//SQl-Statement
 	$sql = 'SELECT
-			s.id, s.name, c.category, o.os, w.wlan, p.front, p.back
+			s.id, s.name, c.category, o.os, w.wlan, p.frontback
             FROM
             smartphone as s
             JOIN
-            category as c
-            on s.category_ID = c.ID
-            JOIN
             os as o
             on s.os_ID = o.ID
+            JOIN
+            category as c
+            on s.category_ID = c.ID
             JOIN
             specs as sp
             on s.specs_ID = sp.ID
@@ -33,6 +33,9 @@
       AND s.ID = o.ID
       AND s.ID = sp.ID
       AND sp.ID = w.ID
+      
+
+
       AND s.name LIKE \'%'.$_GET['smartphone'].'%\'
     ';
   */
@@ -46,11 +49,10 @@
 		    $b=$row["category"];
             $c=$row["os"];
             $d=$row["wlan"];
-            $p1=$row["front"];
-            $p2=$row["back"];
+            $p=$row["frontback"];
 
         echo "<h2>Detailansicht - $a</h2>";
-        echo "<img style='max-width: 20%; height:auto;' src='img/smartphones/$p1' alt='Vorderseite.$a' /></td><td><img style='max-width: 20%; height:auto;' src='img/smartphones/$p2' alt='Rückseite.$a' />";
+        echo "<img src='img/smartphones/$p' />";
         echo "<h3>Name</h3>";
         echo $a."<br>";
         echo "<br />";
