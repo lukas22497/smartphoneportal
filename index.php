@@ -46,9 +46,9 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-		<li><a href="index.php?navi=1">Smartphone anzeigen</a></li>
-		<li><a href="index.php?navi=2">Smartphone bewerten</a></li>
+                <li class="active"><a href="index.php">Home</a></li>
+		        <li><a href="index.php?navi=1">Smartphone anzeigen</a></li>
+		        <li><a href="index.php?navi=2">Smartphone bewerten</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
@@ -94,9 +94,9 @@
           <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              <h1>Sie wollen eine Smartphone-Übersicht?</h1>
+              <p>Dann klicken Sie bitte auf folgenden Button</p>
+              <p><a class="btn btn-lg btn-primary" href="index.php?navi=1" role="button">Übersicht anzeigen</a></p>
             </div>
           </div>
         </div>
@@ -128,30 +128,7 @@
 
     <div class="container marketing">
 
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-rounded" src="img/logo_ios.png" alt="Generic placeholder image" width="140">
-          <h2>iOS</h2>
-          <p>Apple</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-rounded" src="img/logo_android.png" alt="Generic placeholder image" width="140">
-          <h2>Android</h2>
-          <p>Google</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-rounded" src="img/logo_wp.png" alt="Generic placeholder image" width="140">
-          <h2>Windows Phone</h2>
-          <p>Microsoft</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
-
-      <!-- START THE FEATURETTES -->
+     <!-- START THE FEATURETTES -->
 
       <hr class="featurette-divider">
 
@@ -200,6 +177,30 @@
         </div>
 -->
       </div>
+              
+        <hr class="featurette-divider">
+        <!-- Divider ist der Trennstrich! -->
+ <!-- Three columns of text below the main section -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-rounded" src="img/logo_ios.png" alt="Generic placeholder image" width="140">
+          <h2>iOS</h2>
+          <p>Apple</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-rounded" src="img/logo_android.png" alt="Generic placeholder image" width="140">
+          <h2>Android</h2>
+          <p>Google</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-rounded" src="img/logo_wp.png" alt="Generic placeholder image" width="140">
+          <h2>Windows Phone</h2>
+          <p>Microsoft</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
 
       <hr class="featurette-divider">
 
