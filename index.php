@@ -183,19 +183,19 @@
  <!-- Three columns of text below the main section -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-rounded" src="img/logo_ios.png" alt="Generic placeholder image" width="140">
+          <img class="img-rounded" src="img/logo_ios.png" alt="Generic placeholder image" height="140" width="auto">
           <h2>iOS</h2>
           <p>Apple</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-rounded" src="img/logo_android.png" alt="Generic placeholder image" width="140">
+          <img class="img-rounded" src="img/logo_android.png" alt="Generic placeholder image" height="140" width="auto">
           <h2>Android</h2>
           <p>Google</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-rounded" src="img/logo_wp.png" alt="Generic placeholder image" width="140">
+          <img class="img-rounded" src="img/logo_wp.png" alt="Generic placeholder image" height="140" width="auto">
           <h2>Windows Phone</h2>
           <p>Microsoft</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
