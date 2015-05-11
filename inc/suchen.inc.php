@@ -17,7 +17,7 @@
 	       OR o.os LIKE \'%'.$_POST['search'].'%\'';
 
  $erg = mysqli_query($db,$sql) or die ("Fehlermeldung: " . mysqli_error($db));
-
+ echo "<div class='col-md-5'>";
  echo "<table>";
  echo "<thead>";
  echo "<tr><th>Name</th><th>Kategorie</th><th>OS</th></tr>";
@@ -33,5 +33,5 @@
 
  echo "</tbody>";
  echo "</table>";
-
+ echo "</div>";
 ?>

@@ -61,7 +61,7 @@
                     <li><a href="#">One more separated link</a></li>
                   </ul>
                 </li>
-                <form class="navbar-form pull-right" method="post" action='{$_SERVER["PHP_SELF"]}'> <!-- Hier klappt noch was nicht -->
+                <form class="navbar-form pull-right" method="post" action='index.php'> <!-- Hier klappt noch was nicht -->
                     <input class="form-control mac-style" name="search" value="" placeholder="Suchen" type="text">
                     <input type="hidden" name="sent" value="1">
                 </form>
@@ -134,18 +134,18 @@
 
      <!-- START THE FEATURETTES -->
 
-      <hr class="featurette-divider">
+<!--      <hr class="featurette-divider">-->
 
       <div class="row featurette">
      <?php
       $navigation = isset($_GET['navi']) ? $_GET['navi'] : '0';
 
 			switch ($navigation) {
-				case "0":
-                    echo "<div class='col-md-7'>";
-					echo "<h2>Willkommen im Smartphoneportal!</h2>";
+/*				case "0":
+                    echo "<div class='col-md-12'>";
+					echo "<h2>Tätigen Sie eine Auswahl!</h2>";
                     echo "</div>";
-					break;
+					break;*/
 				case "1":
                     echo "<div class='col-md-7'>";
 					echo "<h2 class='featurette-heading'>Smartphones <span class='text-muted'>anzeigen</span></h2>";
@@ -158,6 +158,18 @@
 					include ("inc/smartphonebewerten.inc.php");
                     echo "</div>";
 					break;
+                case "Android":
+                    echo "<hr class='featurette-divider'>";
+                    echo "<h2>Filterergebnisse - $navigation</h2>";
+                    break;
+                case "iOS":
+                    echo "<hr class='featurette-divider'>";
+                    echo "<h2>Filterergebnisse - $navigation</h2>";
+                    break;
+                case "Windows Phone OS":
+                    echo "<hr class='featurette-divider'>";
+                    echo "<h2>Filterergebnisse - $navigation</h2>";
+                    break;
                 		//Detailansicht
                 		case "10":
                                 echo "<div class='col-md-7'>";
@@ -169,8 +181,9 @@
       $suche = isset($_POST['search']) ? $_POST['search'] : '';
 
       if ($sent and $suche) {
-       echo "<h2>Smartphone suchen</h2>";
-       include("inc/suchen.inc.php");
+        echo "<hr class='featurette-divider'>";
+        echo "<h2>Suchergebnisse - $suche</h2>";
+        include("inc/suchen.inc.php");
       }
      ?>
 <!--          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>-->
@@ -189,19 +202,19 @@
           <img class="img-rounded" src="img/logo_ios.png" alt="Generic placeholder image" height="140" width="auto">
           <h2>iOS</h2>
           <p>Apple</p>
-          <p><a class="btn btn-default" href="#" role="button">Filter benutzen &raquo;</a></p>
+          <p><a class="btn btn-default" href="index.php?navi=iOS" role="button">Filter benutzen &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-rounded" src="img/logo_android.png" alt="Generic placeholder image" height="140" width="auto">
           <h2>Android</h2>
           <p>Google</p>
-          <p><a class="btn btn-default" href="#" role="button">Filter benutzen &raquo;</a></p>
+          <p><a class="btn btn-default" href="index.php?navi=Android" role="button">Filter benutzen &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-rounded" src="img/logo_wp.png" alt="Generic placeholder image" height="140" width="auto">
           <h2>Windows Phone</h2>
           <p>Microsoft</p>
-          <p><a class="btn btn-default" href="#" role="button">Filter benutzen &raquo;</a></p>
+          <p><a class="btn btn-default" href="index.php?navi=Windows Phone OS" role="button">Filter benutzen &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
