@@ -12,9 +12,9 @@
             JOIN
             os as o
             on s.os_ID = o.ID
-	       WHERE s.name LIKE \'%' . $_POST['suchstring'].'%\'
-	       OR c.category LIKE \'%' . $_POST['suchstring'].'%\'
-	       OR o.os LIKE \'%'.$_POST['suchstring'].'%\'';
+	       WHERE s.name LIKE \'%' . $_POST['search'].'%\'
+	       OR c.category LIKE \'%' . $_POST['search'].'%\'
+	       OR o.os LIKE \'%'.$_POST['search'].'%\'';
 
  $erg = mysqli_query($db,$sql) or die ("Fehlermeldung: " . mysqli_error($db));
 

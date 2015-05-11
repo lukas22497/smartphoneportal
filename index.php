@@ -61,6 +61,10 @@
                     <li><a href="#">One more separated link</a></li>
                   </ul>
                 </li>
+                <form class="navbar-form pull-right" method="post" action='{$_SERVER["PHP_SELF"]}'> <!-- Hier klappt noch was nicht -->
+                    <input class="form-control mac-style" name="search" value="" placeholder="Suchen" type="text">
+                    <input type="hidden" name="sent" value="1">
+                </form>
               </ul>
             </div>
           </div>
@@ -160,15 +164,14 @@
                     			include ("inc/smartphone_details.inc.php");
                     			break;
 			}
-	/*
+	
       $sent = isset($_POST['sent']) ? $_POST['sent'] : '';
-      $suche = isset($_POST['suchstring']) ? $_POST['suchstring'] : '';
+      $suche = isset($_POST['search']) ? $_POST['search'] : '';
 
       if ($sent and $suche) {
        echo "<h2>Smartphone suchen</h2>";
        include("inc/suchen.inc.php");
       }
-*/
      ?>
 <!--          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>-->
 <!--
@@ -186,19 +189,19 @@
           <img class="img-rounded" src="img/logo_ios.png" alt="Generic placeholder image" height="140" width="auto">
           <h2>iOS</h2>
           <p>Apple</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="#" role="button">Filter benutzen &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-rounded" src="img/logo_android.png" alt="Generic placeholder image" height="140" width="auto">
           <h2>Android</h2>
           <p>Google</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="#" role="button">Filter benutzen &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-rounded" src="img/logo_wp.png" alt="Generic placeholder image" height="140" width="auto">
           <h2>Windows Phone</h2>
           <p>Microsoft</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="#" role="button">Filter benutzen &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
