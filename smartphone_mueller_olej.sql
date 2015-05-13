@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 04. Mai 2015 um 14:51
+-- Erstellungszeit: 13. Mai 2015 um 21:43
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -48,7 +48,7 @@ INSERT INTO `bluetooth` (`ID`, `rev`) VALUES
 CREATE TABLE IF NOT EXISTS `category` (
 `ID` smallint(6) NOT NULL,
   `category` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `category`
@@ -56,7 +56,8 @@ CREATE TABLE IF NOT EXISTS `category` (
 
 INSERT INTO `category` (`ID`, `category`) VALUES
 (1, 'Einsteigersmartphone'),
-(2, 'Businessklasse');
+(2, 'Businessklasse'),
+(3, 'Luxus');
 
 -- --------------------------------------------------------
 
@@ -105,7 +106,7 @@ INSERT INTO `network` (`ID`, `network`) VALUES
 CREATE TABLE IF NOT EXISTS `os` (
 `ID` tinyint(4) NOT NULL,
   `os` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `os`
@@ -113,7 +114,8 @@ CREATE TABLE IF NOT EXISTS `os` (
 
 INSERT INTO `os` (`ID`, `os`) VALUES
 (1, 'Android 5.1'),
-(2, 'iOS');
+(2, 'iOS'),
+(3, 'Windows Phone OS');
 
 -- --------------------------------------------------------
 
@@ -123,16 +125,15 @@ INSERT INTO `os` (`ID`, `os`) VALUES
 
 CREATE TABLE IF NOT EXISTS `picture` (
   `ID` int(11) NOT NULL,
-  `front` varchar(45) DEFAULT NULL,
-  `back` varchar(45) DEFAULT NULL
+  `frontback` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `picture`
 --
 
-INSERT INTO `picture` (`ID`, `front`, `back`) VALUES
-(1, 's6_front.png', 's6_back.png');
+INSERT INTO `picture` (`ID`, `frontback`) VALUES
+(1, 's6.png');
 
 -- --------------------------------------------------------
 
@@ -167,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `smartphone` (
   `os_ID` tinyint(4) NOT NULL,
   `specs_ID` smallint(6) NOT NULL,
   `picture_ID` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `smartphone`
@@ -176,7 +177,8 @@ CREATE TABLE IF NOT EXISTS `smartphone` (
 INSERT INTO `smartphone` (`ID`, `name`, `preis`, `category_ID`, `os_ID`, `specs_ID`, `picture_ID`) VALUES
 (1, 'Samsung Galaxy S6', '799.00', 1, 1, 1, 1),
 (2, 'Nexus 6', '699.00', 1, 1, 2, 1),
-(3, 'iPhone 5c', '499.00', 2, 2, 2, 1);
+(3, 'iPhone 5c', '499.00', 2, 2, 2, 1),
+(4, 'Nokia Lumia 630', '499.00', 3, 3, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -359,7 +361,7 @@ ALTER TABLE `wlan`
 -- AUTO_INCREMENT für Tabelle `category`
 --
 ALTER TABLE `category`
-MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT für Tabelle `network`
 --
@@ -369,12 +371,12 @@ MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT für Tabelle `os`
 --
 ALTER TABLE `os`
-MODIFY `ID` tinyint(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `ID` tinyint(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT für Tabelle `smartphone`
 --
 ALTER TABLE `smartphone`
-MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT für Tabelle `specs`
 --

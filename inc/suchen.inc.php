@@ -1,8 +1,10 @@
 <?php
 
  include('db_connect.inc.php');
+ $filter = isset($_GET['filter']) ? $_GET['filter'] : '0';
 
- $sql = 'SELECT
+if ($filter != '0') {
+    $sql = 'SELECT
 			s.id, s.name, c.category, o.os
             FROM
             smartphone as s
@@ -12,9 +14,25 @@
             JOIN
             os as o
             on s.os_ID = o.ID
-	       WHERE s.name LIKE \'%' . $_POST['search'].'%\'
-	       OR c.category LIKE \'%' . $_POST['search'].'%\'
-	       OR o.os LIKE \'%'.$_POST['search'].'%\'';
+	        WHERE s.name LIKE \'%' . $_GET['filter'].'%\'
+	        OR c.category LIKE \'%' . $_GET['filter'].'%\'
+	        OR o.os LIKE \'%'.$_GET['filter'].'%\'';
+}
+else {
+  $sql = 'SELECT
+			s.id, s.name, c.category, o.os
+            FROM
+            smartphone as s
+            JOIN
+            category as c
+            on s.category_ID = c.ID
+            JOIN
+            os as o
+            on s.os_ID = o.ID
+	        WHERE s.name LIKE \'%' . $_POST['search'].'%\'
+	        OR c.category LIKE \'%' . $_POST['search'].'%\'
+	        OR o.os LIKE \'%'.$_POST['search'].'%\'';  
+}
 
  $erg = mysqli_query($db,$sql) or die ("Fehlermeldung: " . mysqli_error($db));
  echo "<div class='col-md-5'>";

@@ -161,14 +161,17 @@
                 case "Android":
                     echo "<hr class='featurette-divider'>";
                     echo "<h2>Filterergebnisse - $navigation</h2>";
+                    include("inc/suchen.inc.php");
                     break;
                 case "iOS":
                     echo "<hr class='featurette-divider'>";
                     echo "<h2>Filterergebnisse - $navigation</h2>";
+                    include("inc/suchen.inc.php");
                     break;
                 case "Windows Phone OS":
                     echo "<hr class='featurette-divider'>";
                     echo "<h2>Filterergebnisse - $navigation</h2>";
+                    include("inc/suchen.inc.php");
                     break;
                 		//Detailansicht
                 		case "10":
@@ -202,19 +205,19 @@
           <img class="img-rounded" src="img/logo_ios.png" alt="Generic placeholder image" height="140" width="auto">
           <h2>iOS</h2>
           <p>Apple</p>
-          <p><a class="btn btn-default" href="index.php?navi=iOS" role="button">Filter benutzen &raquo;</a></p>
+          <p><a class="btn btn-default" href="index.php?navi=iOS&filter=iOS" role="button">Filter benutzen &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-rounded" src="img/logo_android.png" alt="Generic placeholder image" height="140" width="auto">
           <h2>Android</h2>
           <p>Google</p>
-          <p><a class="btn btn-default" href="index.php?navi=Android" role="button">Filter benutzen &raquo;</a></p>
+          <p><a class="btn btn-default" href="index.php?navi=Android&filter=Android" role="button">Filter benutzen &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-rounded" src="img/logo_wp.png" alt="Generic placeholder image" height="140" width="auto">
           <h2>Windows Phone</h2>
           <p>Microsoft</p>
-          <p><a class="btn btn-default" href="index.php?navi=Windows Phone OS" role="button">Filter benutzen &raquo;</a></p>
+          <p><a class="btn btn-default" href="index.php?navi=Windows Phone OS&filter=Windows Phone OS" role="button">Filter benutzen &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
