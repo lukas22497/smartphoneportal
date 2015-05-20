@@ -30,6 +30,10 @@
 <!-- NAVBAR
 ================================================== -->
   <body>
+      <?php
+    // Session starten 
+    session_start (); 
+    ?>
     <div class="navbar-wrapper">
       <div class="container">
 
@@ -47,20 +51,19 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Home</a></li>
-		        <li><a href="index.php?navi=1">Smartphone anzeigen</a></li>
-		        <li><a href="index.php?navi=2">Smartphone bewerten</a></li>
+<!--		        <li><a href="index.php?navi=1">Smartphone anzeigen</a></li>
+		        <li><a href="index.php?navi=2">Smartphone bewerten</a></li>-->
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Smartphones<span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
+                    <li class="dropdown-header">Smartphones</li>
+                    <li><a href="index.php?navi=1">Smartphone anzeigen</a></li>
+                    <li><a href="index.php?navi=2">Smartphone bewerten</a></li>
                     <li><a href="#">Something else here</a></li>
                     <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
                   </ul>
                 </li>
+                <li><a href="index.php?navi=20">Login</a></li>
                 <form class="navbar-form pull-right" method="post" action='index.php'> <!-- Hier klappt noch was nicht -->
                     <input class="form-control mac-style" name="search" value="" placeholder="Suchen" type="text">
                     <input type="hidden" name="sent" value="1">
@@ -177,6 +180,10 @@
                 		case "10":
                                 echo "<div class='col-md-7'>";
                     			include ("inc/smartphone_details.inc.php");
+                    			break;
+                	    case "20":
+                                echo "<div class='col-md-12'>";
+                    			include ("inc/login_form.inc.php");
                     			break;
 			}
 	

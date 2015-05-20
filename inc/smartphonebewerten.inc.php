@@ -1,4 +1,5 @@
 <?php
 	echo "Inhalt der Datei: kneipenhinzufuegen.inc.php";
-	// Bei Video 8 weitermachen!
+	include("inc/checkuser.inc.php");
+    echo "Test";
 ?>
