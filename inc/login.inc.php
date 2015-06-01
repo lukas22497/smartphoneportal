@@ -1,9 +1,6 @@
 <?php 
 // Datenbankverbindung aufbauen 
 include('db_connect.inc.php');
-//$connectionid = mysql_connect ("localhost", "root", ""); 
-/*if (!mysqli_select_db ("LoginSystem", $db)) 
-{ die ("Keine Verbindung zur Datenbank"); } //if*/
 $sql = "SELECT u.name, u.password
         FROM
         user as u
@@ -11,7 +8,6 @@ $sql = "SELECT u.name, u.password
         AND u.password = '".md5($_REQUEST["pwd"])."';"; 
 $erg = mysqli_query($db,$sql) or die ("Fehlermeldung: " . mysqli_error($db));
 
-// Werte werden hier nicht übergeben, Abfrage korrigieren
 if (($row = $erg->fetch_assoc()) !== NULL) {// Benutzerdaten in ein Array auslesen. 
 $data = mysql_fetch_array ($erg); 
 
