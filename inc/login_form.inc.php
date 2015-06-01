@@ -6,7 +6,6 @@
     <?php 
     if (isset ($_REQUEST["fehler"])) { 
         echo "Die Zugangsdaten waren ungültig.";
-        echo md5("test");
     } 
 ?> 
 <form action="inc/login.inc.php" method="post"> 

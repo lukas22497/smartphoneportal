@@ -9,14 +9,17 @@ $sql = "SELECT u.name, u.password
 $erg = mysqli_query($db,$sql) or die ("Fehlermeldung: " . mysqli_error($db));
 
 if (($row = $erg->fetch_assoc()) !== NULL) {// Benutzerdaten in ein Array auslesen. 
-$data = mysql_fetch_array ($erg); 
+//$data = mysql_fetch_array ($erg); 
 
-$_SESSION["user_id"] = $data["name"]; 
-$_SESSION["user_password"] = $data["password"]; 
+$_SESSION["user_id"] = $row["name"]; 
+$_SESSION["user_password"] = $row["password"]; 
+
     
+echo $_SESSION["user_id"];
+echo $_SESSION["user_password"];
 header ("Location: ../intern.php"); 
-} //if
-else {
-    header ("Location: login_form.inc.php?fehler=1");
-} //else
+}
+//else {
+//    header ("Location: login_form.inc.php?fehler=1");
+//}
 ?>

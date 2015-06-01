@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 01. Jun 2015 um 08:19
+-- Erstellungszeit: 01. Jun 2015 um 09:15
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -195,16 +195,17 @@ CREATE TABLE IF NOT EXISTS `specs` (
   `network_ID` int(11) NOT NULL,
   `bluetooth_ID` int(11) NOT NULL,
   `size_ID` int(11) NOT NULL,
-  `chip_ID` int(11) NOT NULL
+  `chip_ID` int(11) NOT NULL,
+  `dim` varchar(45) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `specs`
 --
 
-INSERT INTO `specs` (`ID`, `screenresolution`, `weight`, `ppi`, `wlan_ID`, `network_ID`, `bluetooth_ID`, `size_ID`, `chip_ID`) VALUES
-(1, '1920 x 1080', '155 g', '468 ppi', 1, 1, 1, 1, 1),
-(2, '1366x768', '150 g', '326 ppi', 2, 2, 2, 2, 2);
+INSERT INTO `specs` (`ID`, `screenresolution`, `weight`, `ppi`, `wlan_ID`, `network_ID`, `bluetooth_ID`, `size_ID`, `chip_ID`, `dim`) VALUES
+(1, '1920 x 1080', '155 g', '468 ppi', 1, 1, 1, 1, 1, '69 x 137 x 8 mm'),
+(2, '1366x768', '150 g', '326 ppi', 2, 2, 2, 2, 2, '69 x 137 x 8 mm');
 
 -- --------------------------------------------------------
 
