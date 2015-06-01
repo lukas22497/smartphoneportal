@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 13. Mai 2015 um 21:43
+-- Erstellungszeit: 01. Jun 2015 um 08:19
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -224,7 +224,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`ID`, `name`, `email`, `password`) VALUES
-(1, 'mueller_olej', 'test@test.de', 'smartphoneportal');
+(1, 'mueller_olej', 'test@test.de', 'smartphoneportal'),
+(2, 'test', 'test@test.de', '098f6bcd4621d373cade4e832627b4f6');
 
 -- --------------------------------------------------------
 
