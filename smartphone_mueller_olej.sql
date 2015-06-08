@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 01. Jun 2015 um 09:15
+-- Erstellungszeit: 08. Jun 2015 um 08:39
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -75,8 +75,10 @@ CREATE TABLE IF NOT EXISTS `chip` (
 --
 
 INSERT INTO `chip` (`ID`, `chipname`) VALUES
-(1, 'Qualcomm Snapdragon 400'),
-(2, 'A8');
+(1, 'Qualcomm Snapdragon 810, 2,5 GHz'),
+(2, 'A6, 1,3 GHz'),
+(3, 'Qualcomm Krait 400 (2,26 GHz)'),
+(4, 'Qualcomm Snapdragon 600, 1,7GHz');
 
 -- --------------------------------------------------------
 
@@ -106,16 +108,17 @@ INSERT INTO `network` (`ID`, `network`) VALUES
 CREATE TABLE IF NOT EXISTS `os` (
 `ID` tinyint(4) NOT NULL,
   `os` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `os`
 --
 
 INSERT INTO `os` (`ID`, `os`) VALUES
-(1, 'Android 5.1'),
-(2, 'iOS'),
-(3, 'Windows Phone OS');
+(1, 'Android 4.4 (KitKat)'),
+(2, 'iOS 7'),
+(3, 'Windows Phone OS'),
+(4, 'Android 4.3 (Jelly Bean)');
 
 -- --------------------------------------------------------
 
@@ -133,7 +136,11 @@ CREATE TABLE IF NOT EXISTS `picture` (
 --
 
 INSERT INTO `picture` (`ID`, `frontback`) VALUES
-(1, 's6.png');
+(1, 's6.png'),
+(2, 'n5.png'),
+(3, '5c.png'),
+(4, 'one.png'),
+(5, '630.png');
 
 -- --------------------------------------------------------
 
@@ -151,8 +158,9 @@ CREATE TABLE IF NOT EXISTS `size` (
 --
 
 INSERT INTO `size` (`ID`, `size`) VALUES
-(1, '5,0"'),
-(2, '4,7"');
+(1, '4,95"'),
+(2, '4"'),
+(3, '4,7"');
 
 -- --------------------------------------------------------
 
@@ -168,17 +176,18 @@ CREATE TABLE IF NOT EXISTS `smartphone` (
   `os_ID` tinyint(4) NOT NULL,
   `specs_ID` smallint(6) NOT NULL,
   `picture_ID` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `smartphone`
 --
 
 INSERT INTO `smartphone` (`ID`, `name`, `preis`, `category_ID`, `os_ID`, `specs_ID`, `picture_ID`) VALUES
-(1, 'Samsung Galaxy S6', '799.00', 1, 1, 1, 1),
-(2, 'Nexus 6', '699.00', 1, 1, 2, 1),
-(3, 'iPhone 5c', '499.00', 2, 2, 2, 1),
-(4, 'Nokia Lumia 630', '499.00', 3, 3, 1, 1);
+(1, 'Samsung Galaxy S6', '799.00', 1, 1, 4, 1),
+(2, 'Nexus 5', '350.00', 1, 1, 1, 2),
+(3, 'iPhone 5c', '499.00', 2, 2, 2, 3),
+(4, 'Nokia Lumia 630', '499.00', 3, 3, 5, 5),
+(5, 'HTC One', '499.00', 3, 4, 3, 4);
 
 -- --------------------------------------------------------
 
@@ -197,15 +206,18 @@ CREATE TABLE IF NOT EXISTS `specs` (
   `size_ID` int(11) NOT NULL,
   `chip_ID` int(11) NOT NULL,
   `dim` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `specs`
 --
 
 INSERT INTO `specs` (`ID`, `screenresolution`, `weight`, `ppi`, `wlan_ID`, `network_ID`, `bluetooth_ID`, `size_ID`, `chip_ID`, `dim`) VALUES
-(1, '1920 x 1080', '155 g', '468 ppi', 1, 1, 1, 1, 1, '69 x 137 x 8 mm'),
-(2, '1366x768', '150 g', '326 ppi', 2, 2, 2, 2, 2, '69 x 137 x 8 mm');
+(1, '1920 x 1080', '130 g', '445 ppi', 3, 1, 1, 1, 3, '137.8 x 8.6 mm'),
+(2, '1366x768', '130 g', '326 ppi', 2, 1, 1, 2, 2, '69 x 137 x 8 mm'),
+(3, '1920 x 1080', '143g', '468 ppi', 4, 1, 1, 3, 3, '130.9mm x 7.9mm'),
+(4, '2560 x 1440', '136 g', '441 ppi', 3, 1, 1, 1, 1, '130.9mm x 5.6 mm'),
+(5, '840 x 560', '155 g', '230 ppi', 4, 2, 2, 2, 3, '125 mm x 9mm');
 
 -- --------------------------------------------------------
 
@@ -263,7 +275,7 @@ CREATE TABLE IF NOT EXISTS `user_kommentiert_kommentare` (
 CREATE TABLE IF NOT EXISTS `wlan` (
 `ID` tinyint(4) NOT NULL,
   `wlan` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `wlan`
@@ -271,7 +283,9 @@ CREATE TABLE IF NOT EXISTS `wlan` (
 
 INSERT INTO `wlan` (`ID`, `wlan`) VALUES
 (1, 'b/g/n/ac'),
-(2, 'b/g/n');
+(2, 'b/g/n'),
+(3, '802.11a/b/g/n/ac'),
+(4, '802.11a/b/g/n');
 
 --
 -- Indizes der exportierten Tabellen
@@ -373,22 +387,22 @@ MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT für Tabelle `os`
 --
 ALTER TABLE `os`
-MODIFY `ID` tinyint(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `ID` tinyint(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT für Tabelle `smartphone`
 --
 ALTER TABLE `smartphone`
-MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT für Tabelle `specs`
 --
 ALTER TABLE `specs`
-MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT für Tabelle `wlan`
 --
 ALTER TABLE `wlan`
-MODIFY `ID` tinyint(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `ID` tinyint(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- Constraints der exportierten Tabellen
 --
