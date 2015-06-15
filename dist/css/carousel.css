@@ -143,3 +143,6 @@ body {
 .mac-style:focus{
     width: 300px;
 }
+table, tr, td {
+    border-spacing: 20px;
+}

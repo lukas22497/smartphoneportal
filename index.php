@@ -30,7 +30,7 @@
 <!-- NAVBAR
 ================================================== -->
   <body>
-      <?php
+<?php
     // Session starten 
     session_start (); 
     ?>
@@ -63,7 +63,15 @@
                     <li class="divider"></li>
                   </ul>
                 </li>
-                <li><a href="index.php?navi=20">Login</a></li>
+<?php
+            if (!isset ($_SESSION["user_id"])) { 
+                echo "<li><a href='index.php?navi=20'>Login</a>";
+                }
+            if (isset ($_SESSION["user_id"])) { 
+                echo "<li><a href='inc/logout.inc.php'>Ausloggen</a>";
+                }
+?>
+                </li>
                 <form class="navbar-form pull-right" method="post" action='index.php'> <!-- Hier klappt noch was nicht -->
                     <input class="form-control mac-style" name="search" value="" placeholder="Suchen" type="text">
                     <input type="hidden" name="sent" value="1">
@@ -88,7 +96,7 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <img class="first-slide" src="img/header.png" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Willkommen im Smartphone-Portal</h1>
@@ -98,7 +106,7 @@
           </div>
         </div>
         <div class="item">
-          <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+          <img class="second-slide" src="img/header2.png" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Sie wollen eine Smartphone-Übersicht?</h1>
@@ -185,6 +193,10 @@
                                 echo "<div class='col-md-12'>";
                     			include ("inc/login_form.inc.php");
                     			break;
+                        case "30":
+                                echo "<div class='col-md-12'>";
+                    			include ("intern.php");
+                    			break;
 			}
 	
       $sent = isset($_POST['sent']) ? $_POST['sent'] : '';
@@ -195,7 +207,7 @@
         echo "<h2>Suchergebnisse - $suche</h2>";
         include("inc/suchen.inc.php");
       }
-     ?>
+?>
 <!--          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>-->
 <!--
         <div class="col-md-5">
@@ -204,6 +216,7 @@
 -->
       </div>
         <!-- Divider ist der Trennstrich! -->
+              <hr class="featurette-divider">
  <!-- Three columns of text below the main section -->
       <div class="row">
         <div class="col-lg-4">

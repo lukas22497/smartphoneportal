@@ -3,7 +3,7 @@
 <head>
     <title>Login</title></head> 
 <body> 
-    <?php 
+<?php 
     if (isset ($_REQUEST["fehler"])) { 
         echo "Die Zugangsdaten waren ungültig.";
     } 

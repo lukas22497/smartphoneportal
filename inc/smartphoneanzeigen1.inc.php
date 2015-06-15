@@ -1,8 +1,6 @@
 <?php
-
 	//Database-Values
 	include("db_connect.inc.php");
-
 	//SQl-Statement
 	$sql = 'SELECT
 			s.id, s.name, c.category, o.os
@@ -15,7 +13,7 @@
             os as o
             on s.os_ID = o.ID';
 	$erg = mysqli_query($db,$sql) or die ("Fehlermeldung: " . mysqli_error($db));
-    echo "<table>";
+    echo "<table style='border-spacing:20px'>";
 	echo "<thead>";
 	echo "<tr><th>Name</th><th>Kategorie</th><th>Betriebssystem</th></tr>";
 	echo "</thead>";
