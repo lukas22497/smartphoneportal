@@ -13,7 +13,7 @@
             os as o
             on s.os_ID = o.ID';
 	$erg = mysqli_query($db,$sql) or die ("Fehlermeldung: " . mysqli_error($db));
-    echo "<table style='border-spacing:20px'>";
+    echo "<table class='table table-hover'>";
 	echo "<thead>";
 	echo "<tr><th>Name</th><th>Kategorie</th><th>Betriebssystem</th></tr>";
 	echo "</thead>";
