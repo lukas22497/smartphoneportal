@@ -101,8 +101,9 @@ session_start ();
           <div class="container">
             <div class="carousel-caption">
               <h1>Willkommen im Smartphone-Portal</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            <!--Kann in <p> eingefügt werden: <code>Text</code>-->
+              <p>Wenn Sie Zugriff auf den internen Bereich haben möchten und eine Bewertung abgeben möchten, registrieren Sie sich doch einfach.</p>
+              <p><a class="btn btn-lg btn-primary" href="index.php?navi=20" role="button">Registrieren</a></p>
             </div>
           </div>
         </div>
@@ -111,7 +112,7 @@ session_start ();
           <div class="container">
             <div class="carousel-caption">
               <h1>Sie wollen eine Smartphone-Übersicht?</h1>
-              <p>Dann klicken Sie bitte auf folgenden Button</p>
+              <p>Eine Übersicht aller aktuellen Top-Smartphones finden Sie hier.</p>
               <p><a class="btn btn-lg btn-primary" href="index.php?navi=1" role="button">Übersicht anzeigen</a></p>
             </div>
           </div>
@@ -120,20 +121,20 @@ session_start ();
           <img class="third-slide" src="img/header3.png" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              <h1>Slider 3</h1>
+              <p>Text zu Slider 3</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Buttontext</a></p>
             </div>
           </div>
         </div>
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+        <span class="sr-only">Vorheriges</span>
       </a>
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
+        <span class="sr-only">Nächstes</span>
       </a>
     </div><!-- /.carousel -->
 
@@ -259,7 +260,7 @@ ob_flush();
 
       <!-- FOOTER -->
       <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p class="pull-right"><a href="#">Nach oben</a></p>
         <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 
