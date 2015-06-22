@@ -8,6 +8,9 @@
     } 
     if (isset ($_REQUEST["notloggedin"])) { 
         echo "Bitte loggen Sie sich ein, um Zugriff auf die Seite zu bekommen.";
+    }
+    if (isset ($_REQUEST["out"])) { 
+        echo "Sie wurden ausgeloggt.";
     } 
 ?> 
 <form action="inc/login.inc.php" method="post"> 

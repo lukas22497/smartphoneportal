@@ -153,11 +153,6 @@ session_start ();
       $navigation = isset($_GET['navi']) ? $_GET['navi'] : '0';
 
 			switch ($navigation) {
-/*				case "0":
-                    echo "<div class='col-md-12'>";
-					echo "<h2>Tätigen Sie eine Auswahl!</h2>";
-                    echo "</div>";
-					break;*/
 				case "1":
                     echo "<div class='col-md-7'>";
 					echo "<h2 class='featurette-heading'>Smartphones <span class='text-muted'>anzeigen</span></h2>";
@@ -194,6 +189,9 @@ session_start ();
                         if (isset($REQUEST["notloggedin"])) {
                             include ("inc/login_form.inc.php?notloggedin=1");
                         }
+                        if (isset($REQUEST["out"])) {
+                            include ("inc/login_form.inc.php?out=1");
+                        }                
                         else {
                             include ("inc/login_form.inc.php");
                         }
