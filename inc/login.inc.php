@@ -19,7 +19,7 @@ $_SESSION["user_password"] = $row["password"];
 echo $_SESSION["user_id"];
 echo $_SESSION["user_password"];
 //include("smartphonebewerten.inc.php");
-header ("Location: ../index.php?navi=30"); 
+header("Location: ../index.php?navi=30"); 
 }
 //else {
 //    header ("Location: login_form.inc.php?fehler=1");
