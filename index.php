@@ -46,11 +46,10 @@ session_start ();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Smartphone-Portal</a>
+              <a class="navbar-brand" href="index.php">Smartphone-Portal</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="index.php">Home</a></li>
 <!--		        <li><a href="index.php?navi=1">Smartphone anzeigen</a></li>
 		        <li><a href="index.php?navi=2">Smartphone bewerten</a></li>-->
                 <li class="dropdown">
