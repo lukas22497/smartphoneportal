@@ -1,5 +1,5 @@
-<?php 
-if (!isset ($_SESSION["user_id"])) { 
-    header("Location:   ../index.php?navi=20"); 
+<?php
+if (!isset ($_SESSION["user_id"])) {
+header("Location:   /smartphoneportal/index.php?navi=20"); 
 }
 ?>

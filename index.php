@@ -31,9 +31,9 @@
 ================================================== -->
   <body>
 <?php
-    // Session starten 
-    session_start (); 
-    ?>
+ob_start();
+session_start (); 
+?>
     <div class="navbar-wrapper">
       <div class="container">
 
@@ -148,7 +148,7 @@
 <!--      <hr class="featurette-divider">-->
 
       <div class="row featurette">
-     <?php
+<?php
       $navigation = isset($_GET['navi']) ? $_GET['navi'] : '0';
 
 			switch ($navigation) {
@@ -207,6 +207,7 @@
         echo "<h2>Suchergebnisse - $suche</h2>";
         include("inc/suchen.inc.php");
       }
+ob_flush();
 ?>
 <!--          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>-->
 <!--
