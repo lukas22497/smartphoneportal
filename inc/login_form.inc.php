@@ -1,4 +1,3 @@
-<?php //session_start (); ?> 
 <html> 
 <head>
     <title>Login</title></head> 
@@ -6,6 +5,9 @@
 <?php 
     if (isset ($_REQUEST["fehler"])) { 
         echo "Die Zugangsdaten waren ungültig.";
+    } 
+    if (isset ($_REQUEST["notloggedin"])) { 
+        echo "Bitte loggen Sie sich ein, um Zugriff auf die Seite zu bekommen.";
     } 
 ?> 
 <form action="inc/login.inc.php" method="post"> 

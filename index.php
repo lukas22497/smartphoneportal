@@ -65,6 +65,7 @@ session_start ();
                 </li>
 <?php
             if (!isset ($_SESSION["user_id"])) { 
+                echo "<li><a href='index.php?navi=40'>Registrieren</a>";
                 echo "<li><a href='index.php?navi=20'>Login</a>";
                 }
             if (isset ($_SESSION["user_id"])) { 
@@ -184,19 +185,32 @@ session_start ();
                     echo "<h2>Filterergebnisse - $navigation</h2>";
                     include("inc/suchen.inc.php");
                     break;
-                		//Detailansicht
-                		case "10":
-                                echo "<div class='col-md-7'>";
-                    			include ("inc/smartphone_details.inc.php");
-                    			break;
-                	    case "20":
-                                echo "<div class='col-md-12'>";
-                    			include ("inc/login_form.inc.php");
-                    			break;
-                        case "30":
-                                echo "<div class='col-md-12'>";
-                    			include ("intern.php");
-                    			break;
+                case "10":
+                        echo "<div class='col-md-7'>";
+                        include ("inc/smartphone_details.inc.php");
+                        break;
+                case "20":
+                        echo "<div class='col-md-12'>";
+                        if (isset($REQUEST["notloggedin"])) {
+                            include ("inc/login_form.inc.php?notloggedin=1");
+                        }
+                        else {
+                            include ("inc/login_form.inc.php");
+                        }
+                        break;
+                case "30":
+                        echo "<div class='col-md-12'>";
+                        include ("intern.php");
+                        break;
+                case "40":
+                        echo "<div class='col-md-12'>";
+                        if (isset($REQUEST["notloggedin"])) {
+                            include ("inc/register_form.inc.php?success=1");
+                        }
+                        else {
+                            include ("inc/register_form.inc.php");
+                        }
+                        break;                
 			}
 	
       $sent = isset($_POST['sent']) ? $_POST['sent'] : '';

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 08. Jun 2015 um 08:39
+-- Erstellungszeit: 22. Jun 2015 um 11:09
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -226,11 +226,11 @@ INSERT INTO `specs` (`ID`, `screenresolution`, `weight`, `ppi`, `wlan_ID`, `netw
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `ID` smallint(6) NOT NULL,
+`ID` smallint(6) NOT NULL,
   `name` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
   `password` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `user`
@@ -238,7 +238,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`ID`, `name`, `email`, `password`) VALUES
 (1, 'mueller_olej', 'test@test.de', 'smartphoneportal'),
-(2, 'test', 'test@test.de', '098f6bcd4621d373cade4e832627b4f6');
+(2, 'test', 'test@test.de', '098f6bcd4621d373cade4e832627b4f6'),
+(6, 'lukas', 'test@test.de', '098f6bcd4621d373cade4e832627b4f6');
 
 -- --------------------------------------------------------
 
@@ -398,6 +399,11 @@ MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 ALTER TABLE `specs`
 MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT für Tabelle `user`
+--
+ALTER TABLE `user`
+MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT für Tabelle `wlan`
 --
