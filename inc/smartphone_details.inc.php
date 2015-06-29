@@ -1,4 +1,17 @@
 <?php
+echo "<script type='text/javascript' src='js/jquery-1.5.js'>";
+echo "</script>";
+echo "<script type='text/javascript'>";
+echo "$(document).ready(function(){";
+echo "$('#toggle1').click(function(event){";
+echo "$('#b1').slideToggle('slow');";
+echo "});";
+echo "$('#toggle2').click(function(event){";
+echo "$('#description').slideToggle('slow');";
+echo "});";
+echo "});";
+echo "</script>";
+
 	//Database-Values
 	include("db_connect.inc.php");
 
@@ -71,7 +84,10 @@
 
         
         echo "<h2>Detailansicht - $a</h2>";
-       // echo "<img src='img/$p' />";
+//        echo "<button id='toggle1'>Toogle Bild</button>";
+        echo "<h3>Beschreibung zu dem $a</h3>";
+        echo "<button id='toggle2'>Beschreibung ein-/ausblenden</button>";
+        echo "<p id='description'>Das $a überzeugt mit einer erhöhten Startgeschwindigkeit für<br>Betriebssystem und Anwendungen sowie verbesserter Energieeffizienz gegenüber<br>Vorgängermodellen. Durch seine 64-bit-Architektur,<br>LPDDR4 und fortschrittliche GPU steht es für Leistung,<br>Multitasking und Multimediafunktionen der neuen Generation.</p>";
         echo "<h3>Name</h3>";
         echo $a."<br>";
         echo "<h3>Kategorie</h3>";
@@ -98,6 +114,6 @@
         echo $preis." €<br>";
         echo "</div>";
         echo "<div class='col-md-5'>";
-        echo "<img class='featurette-image img-responsive center-block' src='img/$p' data-src='holder.js/500x500/auto' alt='Generic placeholder image'>";
+        echo "<img id='b1' class='featurette-image img-responsive center-block' src='img/$p' data-src='holder.js/500x500/auto' alt='Generic placeholder image'>";
         echo "</div>";
 ?>
